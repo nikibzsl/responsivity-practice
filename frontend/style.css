@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/* sass selectorok 
+    nesting 
+    mintha js objektumokat ágyaznánk egymásba
+    a browser önmagában nem ismeri, nem tudjuk simán belinkelni html
+    vscode átkonvertálja sima css-é
+
+*/
+body {
+  font-family: 'Square Peg', cursive;
+  /*position fixed kiveszi a renderből az elemet és nem veszi figyelembe*/
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+  color: #7d9f7d;
+}
+
+#root {
+  width: 100%;
+  /* törekedjünk 100%-ra, de 1200px-nél ne legyen nagyobb */
+  max-width: 1200px;
+  min-width: 300px;
+}
+
+#root section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 80px 20px 0 0;
+}
+
+#root section h2 {
+  color: red;
+  /* media breakpoint-ok, ahol megadunk értékeket?? LASSABBAN MÁR TE GECI, mediaquery
+            a mediaquery felülírja az alapméretezett értéket. jobban átláthatóbb
+             */
+}
+
+#root section h2 span {
+  -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+@media (max-width: 400px) {
+  #root section h2 {
+    font-size: 25px;
+  }
+  #root section h2 span {
+    color: #a583c5;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 800px) {
+  #root section h2 {
+    font-size: 50px;
+  }
+  #root section h2 span {
+    color: #c5af56;
+  }
+}
+
+@media (min-width: 801px) {
+  #root section h2 {
+    font-size: 100px;
+  }
+  #root section h2 span {
+    color: #83c5c3;
+  }
+}
+
+#root section button {
+  position: absolute;
+  width: calc(100% - 80px);
+  max-width: 400px;
+  height: 60px;
+  margin: 40px;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  /*szeretnénk, ha csak bizonyos méret felett lenne 400px*/
+  color: white;
+}
+
+footer {
+  min-height: 400px;
+}
+
+/*
+em
+rem: oldalhoz viszonyul
+margin, padding esetében nem ajánlatos, mert át kell írogatni
+
+*/
+/*
+    MIÉRT 400 ÉS 800px?
+
+    elvi px szám ami a standard
+    az a standard aránylik a felbontáshoz
+    nem az eredeti felbontást fogja közölni, hanem egy elvi felbontást
+    kb egy 16px-es font méret olvasható
+    desktopokon is ugyanakkorában jelenjen meg mint a mobilokon
+    relatív felbontás stimmel
+    
+
+*/
+/*# sourceMappingURL=style.css.map */

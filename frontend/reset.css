@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box; /* ha valami méreteződik, akkor együtt méreteződnek */
+    background: transparent;
+    font-family: inherit; 
+  }
+  a{
+    text-decoration: none;
+  }
+  a img {
+    border: none;
+  }
+  
+  button,
+  a {
+    cursor: pointer; /*minden esetben!! mert kattintható*/
+    color: inherit; /*a parent színét örökölje mindig*/
+  }
+  
+  textarea {
+    resize: none; /*ne lehessen resizeolni*/
+  }
+  
+  button,
+  textarea,
+  select {
+    appearance: none !important;
+    border-radius: 0;
+  }
+  /* * selector: minden egyes html elemnek 0 legyen a margója, a padidngje stb
